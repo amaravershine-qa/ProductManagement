@@ -1,6 +1,6 @@
 {
   "project_name": "RechargeMate",
-  "summary": "RechargeMate is a mobile application designed to simplify the process of recharging prepaid mobile accounts, providing a seamless, secure, and user-friendly experience. It integrates multiple payment gateways and offers a wide range of recharge options to become the go-to solution for mobile users requiring quick and reliable recharge services.",
+  "summary": "RechargeMate is a mobile application designed to simplify the process of recharging prepaid mobile accounts by integrating multiple payment gateways and offering a wide range of recharge options. The app aims to provide a seamless, secure, and user-friendly experience for users to top-up their mobile credits across various telecom operators.",
   "modules": [
     {
       "module_name": "User Registration and Authentication",
@@ -10,10 +10,11 @@
           "title": "User Registration via Mobile Number",
           "as_a": "Prepaid mobile user",
           "i_want_to": "register using my mobile number and authenticate via OTP",
-          "so_that": "I can securely access the app",
+          "so_that": "I can securely access the app and manage my account",
           "acceptance_criteria": [
-            "Given a new user, when they enter their mobile number, then they should receive an OTP for verification.",
-            "Given a user with a valid OTP, when they enter it, then they should be successfully registered and logged in."
+            "Given a new user, when they open the app, then they should see an option to register using their mobile number.",
+            "Given a user enters their mobile number, when they request an OTP, then the system should send an OTP to the provided number.",
+            "Given a user receives an OTP, when they enter it correctly, then they should be successfully registered and logged into the app."
           ],
           "priority": "Critical"
         },
@@ -22,10 +23,11 @@
           "title": "Social Media Login",
           "as_a": "Prepaid mobile user",
           "i_want_to": "log in using my Google or Facebook account",
-          "so_that": "I can access the app without creating a new account",
+          "so_that": "I can quickly access the app without creating a new account",
           "acceptance_criteria": [
-            "Given a user, when they choose to log in with Google, then they should be redirected to Google's authentication page and logged in upon successful authentication.",
-            "Given a user, when they choose to log in with Facebook, then they should be redirected to Facebook's authentication page and logged in upon successful authentication."
+            "Given a user, when they choose to log in with Google, then they should be redirected to Google's authentication page.",
+            "Given a user, when they choose to log in with Facebook, then they should be redirected to Facebook's authentication page.",
+            "Given a user successfully authenticates via Google or Facebook, then they should be logged into the app."
           ],
           "priority": "Critical"
         }
@@ -39,10 +41,11 @@
           "title": "Recharge Mobile Number",
           "as_a": "Prepaid mobile user",
           "i_want_to": "recharge my mobile number by selecting my telecom operator and choosing a recharge amount",
-          "so_that": "I can top-up my mobile credits",
+          "so_that": "I can top-up my mobile credits easily",
           "acceptance_criteria": [
-            "Given a user, when they select a telecom operator, then they should see available plans and offers.",
-            "Given a user, when they enter their mobile number and select a recharge amount, then they should be able to proceed to payment."
+            "Given a user, when they select a telecom operator, then they should see available recharge plans and offers.",
+            "Given a user selects a recharge plan, when they confirm the transaction, then the system should process the recharge and update the user's balance.",
+            "Given a successful recharge, when the transaction is complete, then the user should receive a confirmation message."
           ],
           "priority": "Critical"
         }
@@ -55,12 +58,12 @@
           "id": "US-004",
           "title": "Integrate Multiple Payment Gateways",
           "as_a": "Prepaid mobile user",
-          "i_want_to": "use different payment gateways like PayPal, Stripe, and local banks",
-          "so_that": "I can securely complete my transactions",
+          "i_want_to": "use different payment gateways to complete my recharge transactions",
+          "so_that": "I have flexibility in choosing my payment method",
           "acceptance_criteria": [
-            "Given a user, when they proceed to payment, then they should see options for PayPal, Stripe, and local banks.",
-            "Given a user, when they select a payment gateway, then they should be able to complete the transaction securely.",
-            "Given a user, when they complete a transaction, then they should have the option to save their payment details for future use."
+            "Given a user, when they proceed to payment, then they should see options for multiple payment gateways (e.g., PayPal, Stripe).",
+            "Given a user selects a payment gateway, when they enter their payment details, then the system should process the payment securely.",
+            "Given a user, when they opt to save their payment details, then the system should securely store the information for future use."
           ],
           "priority": "High"
         }
@@ -73,11 +76,11 @@
           "id": "US-005",
           "title": "View Transaction History",
           "as_a": "Prepaid mobile user",
-          "i_want_to": "view my past transactions",
-          "so_that": "I can keep track of my recharge activities",
+          "i_want_to": "view my past recharge transactions",
+          "so_that": "I can keep track of my spending and recharge history",
           "acceptance_criteria": [
-            "Given a user, when they navigate to the transaction history, then they should see a list of past transactions with details such as date, amount, and status.",
-            "Given a user, when they view a transaction, then they should see detailed information about that transaction."
+            "Given a user, when they navigate to the transaction history section, then they should see a list of past transactions with details such as date, amount, and status.",
+            "Given a user, when they select a transaction, then they should see detailed information about that transaction."
           ],
           "priority": "Medium"
         }
@@ -91,10 +94,10 @@
           "title": "Support Multiple Languages",
           "as_a": "Prepaid mobile user",
           "i_want_to": "use the app in my preferred language",
-          "so_that": "I can have a better user experience",
+          "so_that": "I can understand and navigate the app easily",
           "acceptance_criteria": [
-            "Given a user, when they set their language preference, then the app should display content in English, Spanish, or Mandarin based on their choice.",
-            "Given a user, when they change their language preference, then the app should immediately reflect the change in language."
+            "Given a user, when they open the app for the first time, then they should be prompted to select a language from English, Spanish, or Mandarin.",
+            "Given a user selects a language, when they navigate through the app, then all text should be displayed in the selected language."
           ],
           "priority": "Medium"
         }
@@ -108,11 +111,11 @@
           "title": "Receive Push Notifications",
           "as_a": "Prepaid mobile user",
           "i_want_to": "receive notifications for successful recharges, failed transactions, and promotional offers",
-          "so_that": "I can stay informed about my account activities",
+          "so_that": "I am informed about my transactions and offers",
           "acceptance_criteria": [
-            "Given a user, when a recharge is successful, then they should receive a notification confirming the success.",
-            "Given a user, when a transaction fails, then they should receive a notification with the failure reason.",
-            "Given a user, when there are promotional offers, then they should receive notifications about these offers."
+            "Given a successful recharge, when the transaction is complete, then the user should receive a push notification confirming the recharge.",
+            "Given a failed transaction, when the system detects the failure, then the user should receive a push notification with details of the failure.",
+            "Given a promotional offer, when it is available, then the user should receive a push notification about the offer."
           ],
           "priority": "High"
         }
